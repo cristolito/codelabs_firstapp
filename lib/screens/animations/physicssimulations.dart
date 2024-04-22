@@ -8,10 +8,8 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
+      body: DraggableCard(
+        child: Image.network('https://picsum.photos/250?image=9')
       ),
     );
   }

@@ -7,12 +7,9 @@ class WebSocket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const title = 'WebSocket Demo';
-    return const MaterialApp(
-      title: title,
-      home: MyHomePage(
+    return MyHomePage(
         title: title,
-      ),
-    );
+      );
   }
 }
 

@@ -54,10 +54,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const appTitle = 'Isolate Demo';
 
-    return const MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
-    );
+    return MyHomePage(title: appTitle);
   }
 }
 

@@ -78,12 +78,7 @@ class _MyAppState extends State<Delete> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fetch Data Example',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('delete: 1 producto de 1 boutique'),
         ),
@@ -148,7 +143,6 @@ class _MyAppState extends State<Delete> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

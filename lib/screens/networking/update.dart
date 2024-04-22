@@ -98,16 +98,12 @@ class _MyAppState extends State<UpdatePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'update: 1 producto de 1 boutique',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Actualiza 1 producto, de 1 boutique'),
         ),
         body: SingleChildScrollView(
+          padding: EdgeInsets.all(16),
           child: Column(
             children: [
               TextField(
@@ -187,7 +183,6 @@ class _MyAppState extends State<UpdatePage> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

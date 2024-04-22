@@ -18,7 +18,6 @@ class FlowPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),

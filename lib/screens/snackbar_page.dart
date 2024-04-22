@@ -9,8 +9,8 @@ class SnackBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-    return MaterialApp(
-      home: Scaffold(
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    return Scaffold(
         body: DefaultTabController(
           length: 3,
           child: Scaffold(
@@ -22,40 +22,39 @@ class SnackBarPage extends StatelessWidget {
                   Tab(icon: Icon(Icons.indeterminate_check_box_sharp)),
                 ],
               ),
-              title: const Text('Tabs, Snack, GFonts, Horizontal lista, listas espaciadas'),
+              title: const Text('Tabs'),
             ),
             body: TabBarView(
               children: [
                 // First Tab
-                _buildFirstTabContent(appState),
+                _buildFirstTabContent(appState, colorScheme: colorScheme),
                 // Second Tab
-                _buildSecondTabContent(context),
+                _buildSecondTabContent(context, colorScheme: colorScheme),
                 // Third Tab
                 _buildThirdTabContent(appState),
               ],
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
-  Widget _buildFirstTabContent(MyAppState appState) {
+  Widget _buildFirstTabContent(MyAppState appState, {required ColorScheme colorScheme}) {
     return Container(
-      color: Color.fromARGB(149, 192, 83, 83),
+      color: colorScheme.primary,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: appState.favorites.length, // Adjust the number of items as needed
         itemBuilder: (context, index) {
           return Container(
+            color: colorScheme.primaryContainer,
             margin: EdgeInsets.all(8.0),
             width: 100.0,
             height: 100.0,
-            color: Colors.yellow,
             child: Center(
               child: Text(
                 appState.favorites[index].pair.asPascalCase,
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(fontSize: 16.0, color: colorScheme.onPrimaryContainer),
               ),
             ),
           );
@@ -64,9 +63,9 @@ class SnackBarPage extends StatelessWidget {
     );
   }
 
-  Widget _buildSecondTabContent(BuildContext context) {
+  Widget _buildSecondTabContent(BuildContext context, {required ColorScheme colorScheme}) {
     return Container(
-      color: Colors.blue,
+      color: colorScheme.secondary,
       child: Center(
         child: ElevatedButton(
           onPressed: () {

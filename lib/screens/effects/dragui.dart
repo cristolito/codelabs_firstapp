@@ -5,22 +5,19 @@ const List<Item> _items = [
     name: 'Spinach Pizza',
     totalPriceCents: 1299,
     uid: '1',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg'),
+    imageProvider: NetworkImage('https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg'),
   ),
   Item(
     name: 'Veggie Delight',
     totalPriceCents: 799,
     uid: '2',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food2.jpg'),
+    imageProvider: NetworkImage('https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg'),
   ),
   Item(
     name: 'Chicken Parmesan',
     totalPriceCents: 1499,
     uid: '3',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food3.jpg'),
+    imageProvider: NetworkImage('https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg'),
   ),
 ];
 
@@ -37,18 +34,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   final List<Customer> _people = [
     Customer(
       name: 'Makayla',
-      imageProvider: const NetworkImage('https://flutter'
-          '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg'),
+      imageProvider: const NetworkImage('https://badgerautomation.com/wp-content/uploads/2019/01/person2.jpg'),
     ),
     Customer(
       name: 'Nathan',
-      imageProvider: const NetworkImage('https://flutter'
-          '.dev/docs/cookbook/img-files/effects/split-check/Avatar2.jpg'),
+      imageProvider: const NetworkImage('https://badgerautomation.com/wp-content/uploads/2019/01/person4.jpg'),
     ),
     Customer(
-      name: 'Emilio',
-      imageProvider: const NetworkImage('https://flutter'
-          '.dev/docs/cookbook/img-files/effects/split-check/Avatar3.jpg'),
+      name: 'Emiliy',
+      imageProvider: const NetworkImage('https://badgerautomation.com/wp-content/uploads/2019/01/person5.jpg'),
     ),
   ];
 
@@ -66,15 +60,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
       appBar: _buildAppBar(),
-      body: _buildContent(),
+      body: _buildContent(Theme.of(context).colorScheme),
     );
   }
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onTertiary),
+      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onSecondaryContainer),
       title: Text(
         'Order Food',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -88,7 +82,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(ColorScheme colorScheme) {
     return Stack(
       children: [
         SafeArea(
@@ -97,7 +91,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
               Expanded(
                 child: _buildMenuList(),
               ),
-              _buildPeopleRow(),
+              _buildPeopleRow(colorScheme),
             ],
           ),
         ),
@@ -141,9 +135,9 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     );
   }
 
-  Widget _buildPeopleRow() {
+  Widget _buildPeopleRow(ColorScheme colorScheme) {
     return Container(
-      color: Color.fromARGB(255, 59, 125, 205),
+      color: colorScheme.primaryContainer,
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
         vertical: 20,

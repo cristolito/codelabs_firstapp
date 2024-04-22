@@ -18,8 +18,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('AnimatedContainer Demo'),
         ),
@@ -65,7 +64,6 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
           },
           child: const Icon(Icons.play_arrow),
         ),
-      ),
-    );
+      );
   }
 }

@@ -54,7 +54,7 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(Theme.of(context).colorScheme),
       body: Stack(
         children: [
           _buildContent(),
@@ -64,12 +64,12 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
     );
   }
 
-  PreferredSizeWidget _buildAppBar() {
+  PreferredSizeWidget _buildAppBar(ColorScheme colorScheme) {
     return AppBar(
-      title: const Text(
+      title: Text(
         'Flutter Menu',
         style: TextStyle(
-          color: Colors.black,
+          color: colorScheme.onPrimary,
         ),
       ),
       backgroundColor: Colors.transparent,
@@ -82,13 +82,13 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
             return IconButton(
               onPressed: _toggleDrawer,
               icon: _isDrawerOpen() || _isDrawerOpening()
-                  ? const Icon(
+                  ? Icon(
                       Icons.clear,
-                      color: Colors.black,
+                      color: colorScheme.onPrimary,
                     )
-                  : const Icon(
+                  : Icon(
                       Icons.menu,
-                      color: Colors.black,
+                      color: colorScheme.onPrimary,
                     ),
             );
           },

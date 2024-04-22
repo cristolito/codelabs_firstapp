@@ -32,7 +32,6 @@ class ListViewPage extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => ListTile(
-                tileColor: Color.fromARGB(255, 222, 173, 250),
                 textColor: const Color.fromARGB(255, 0, 0, 0),
                 leading: Text('${index + 1}'),
                 title: Text(appState.favorites[index].pair.asPascalCase),

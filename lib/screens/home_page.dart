@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 7:
         return MixedListPage(
           items: List<ListItem>.generate(
-            100,
+            1000,
             (i) => i % 6 == 0
                 ? HeadingItem('Heading $i')
                 : MessageItem('Sender $i', 'Message body $i'),
@@ -140,18 +140,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
-          appBar: AppBar(title: Text('App de Gustavo Hernández')),
+          appBar: AppBar(title: Text('Cookbook')),
           body: _getPage(),
-          drawer: Drawer(
+          drawer: SafeArea( child: Drawer(
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-               DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              child: Text('Encabezado Drawer'),
-            ),
             ListTile(
               title: const Text('Generador Palabras'),
               onTap: () {
@@ -479,7 +473,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
             ),
-          ),
+          ),),
         );
       },
     );

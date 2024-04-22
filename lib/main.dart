@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Codelabs',
+        title: 'Cookbook',
 
         initialRoute: '/',
         routes: {
@@ -68,29 +68,21 @@ class MyApp extends StatelessWidget {
 
           // Define the default brightness and colors.
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Color.fromARGB(255, 1, 4, 8),
-            primary: Color.fromARGB(255, 49, 103, 169),
-            onPrimary: Color.fromARGB(255, 241, 241, 241),
-            secondary: Color.fromARGB(255, 0, 109, 98),
-            onSecondary: Color.fromARGB(255, 216, 216, 216),
-            tertiary: Color.fromARGB(255, 30, 30, 30),
-            onTertiary: Color.fromARGB(255, 216, 216, 216),
-            outline: Color.fromARGB(255, 222, 0, 0),
-            brightness: Brightness.dark,
+            seedColor: Colors.blue,
           ),
 
           // Define the default `TextTheme`. Use this to specify the default
           // text styling for headlines, titles, bodies of text, and more.
             textTheme: TextTheme(
               displayLarge: const TextStyle(
-                fontSize: 72,
+                fontSize: 42,
                 fontWeight: FontWeight.bold,
               ),
               // ···
-              titleLarge: GoogleFonts.oswald(
-                fontSize: 30,
+              titleLarge: GoogleFonts.poppins(
+                fontSize: 24,
               ),
-              bodyMedium: GoogleFonts.merriweather(),
+              bodyMedium: GoogleFonts.poppins(),
               displaySmall: GoogleFonts.pacifico(),
             ),
           ),

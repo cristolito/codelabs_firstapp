@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
+  //simulate a delay
+  await Future.delayed(Duration(seconds: 2));
   final response = await client
       .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
@@ -54,10 +56,7 @@ class Parse extends StatelessWidget {
   Widget build(BuildContext context) {
     const appTitle = 'Isolate Demo';
 
-    return const MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
-    );
+    return MyHomePage(title: appTitle);
   }
 }
 

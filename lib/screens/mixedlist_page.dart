@@ -9,9 +9,7 @@ class MixedListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'Mixed List';
 
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text(title),
         ),
@@ -29,8 +27,7 @@ class MixedListPage extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
+      );
   }
 }
 

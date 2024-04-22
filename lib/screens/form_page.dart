@@ -107,6 +107,7 @@ class MyCustomFormState extends State<FormPage> {
         title: Text(appTitle),
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
